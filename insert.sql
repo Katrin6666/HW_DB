@@ -13,11 +13,17 @@ values ('Всё будет отлично', 2015),('Всё будет прекр
 ('Всё прошло и печаль тоже', 2003),('Всё огонь', 2018), ('Всё же было лучше', 2017),
 ('Суперальбом', 2022);
 
+INSERT INTO albums(name, year)
+values ('Всё будет Python', 2019),('Всё будет Питон', 2020);
+
 INSERT INTO tracks(albums_id, name, time)
 values (1, 'track_01', 120),(2, 'track_02', 245),(3, 'track_03', 456),(4, 'Мой track_04', 198),(5, 'track_05', 170),
 (6, 'track_06 мой', 125),(7, 'My track_07', 205),(8, 'track_08', 199),(9, 'track_09', 211),(10, 'track_10', 200),
 (1, 'track_11 my', 187),(2, 'track_12', 222),(3, 'My track_13', 314),(4, 'track_14', 304),(5, 'track_15', 312),
 (6, 'track_16', 288),(7, 'track_17 мой', 177),(8, 'track_18', 145);
+
+INSERT INTO tracks(albums_id, name, time)
+values (11, 'Трек_01', 61),(12, 'Интро_02', 61),(11, 'Супертрек_03', 126),(11, 'Стартрек_04', 138);
 
 INSERT INTO collection(name, year)
 values ('Коллекция_2022', 2022),('Коллекция_2021', 2021), ('Коллекция_2020', 2020),
@@ -34,8 +40,17 @@ values (5, 15),(6, 10),(7, 18),(7, 12),(8, 9),(8, 8),(10, 10),(9, 7),(10, 1),(7,
 INSERT INTO singers_albums (album_id, singer_id)
 values (1, 1),(2, 2),(3, 3),(4, 4),(5, 5),(6, 6),(7, 7),(8, 8),(9, 9),(10, 10);
 
+INSERT INTO singers_albums (album_id, singer_id)
+values (11, 1),(12, 2);
+
 INSERT INTO singers_genres (genre_id,singer_id)
 values (1, 1),(2, 2),(3, 3),(4, 4),(5, 5),(1, 6),(2, 7),(3, 8),(4, 9),(5, 10);
+
+INSERT INTO singers_genres (genre_id,singer_id)
+values (5, 1),(4, 2),(2, 3),(3, 4),(1, 5);
+
+INSERT INTO singers_genres (genre_id,singer_id)
+values (4, 1),(3, 1);
 
 
  
