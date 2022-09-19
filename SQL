@@ -1,6 +1,8 @@
 CREATE TABLE IF NOT EXISTS genres (
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(80) UNIQUE NOT NULL);
+
+alter table genres rename name to genres_name;
 	
 CREATE TABLE IF NOT EXISTS singers (
 	id SERIAL PRIMARY KEY,
@@ -11,16 +13,23 @@ CREATE TABLE IF NOT EXISTS albums (
 	name VARCHAR(80) UNIQUE NOT NULL,
 	year INTEGER check(year>1900) NOT NULL);
 
+alter table albums rename name to albums_name;
+
 CREATE TABLE IF NOT EXISTS tracks (
 	id SERIAL PRIMARY KEY,
 	albums_id INTEGER NOT NULL REFERENCES albums(id),
 	name VARCHAR(80) UNIQUE NOT NULL,
 	time INTEGER check(time>60) NOT NULL);
 
+alter table tracks rename id to track_id;
+alter table tracks rename name to tracks_name;
+
 CREATE TABLE IF NOT EXISTS collection (
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(80) UNIQUE NOT NULL,
 	year INTEGER check(year>1900) NOT NULL);
+
+alter table collection rename name to collection_name;
 	
 CREATE TABLE IF NOT EXISTS singers_genres (
 	genre_id INTEGER REFERENCES genres(id),
